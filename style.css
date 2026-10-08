@@ -140,6 +140,21 @@ nav.links a::after {
 }
 nav.links a:hover { color: var(--text); }
 nav.links a:hover::after { width: 100%; }
+@media (max-width: 560px) {
+  .nav-inner { gap: 12px; padding: 14px; }
+  .brand { flex-shrink: 0; }
+  nav.links {
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 18px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  nav.links::-webkit-scrollbar { display: none; }
+  nav.links a { flex: 0 0 auto; }
+}
 
 .wrap { padding: 0 36px; }
 @media (max-width: 560px) { .wrap { padding: 0 18px; } }

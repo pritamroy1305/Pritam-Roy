@@ -408,3 +408,15 @@ document.querySelectorAll('.card').forEach(function (card) {
   }, { threshold: 0.15 });
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 })();
+
+// ---------- mobile navigation haptics ----------
+(function () {
+  var links = document.querySelectorAll('nav.links a');
+  if (!links.length || typeof navigator.vibrate !== 'function') return;
+
+  links.forEach(function (link) {
+    link.addEventListener('click', function () {
+      if (window.matchMedia('(max-width: 560px)').matches) navigator.vibrate(10);
+    });
+  });
+})();
